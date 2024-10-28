@@ -14,6 +14,13 @@ while(input != 'Exit')
   elsif(input.match(/ccwc\s-l\s\w*.txt/))
     text = input.split(" ").last
     GetLines(text)
+  elsif(input.match(/ccwc\s\-w\s\w*.txt/))
+    text = input.split(" ").last
+    if(File.exist?(text))
+      GetWords(text)
+    else
+      puts "File not found."
+    end 
   else
     puts "Invalid input. Please try again."
   end 
