@@ -21,6 +21,13 @@ while(input != 'Exit')
     else
       puts "File not found."
     end 
+  elsif(input.match(/wc\s-m\s\w*.txt/) || input.match(/ccwc\s-m\s\w*.txt/))
+   text = input.split(" ").last
+    if(File.exist?(text))
+      GetChars(text)
+    else
+      puts "File not found."
+    end
   else
     puts "Invalid input. Please try again."
   end 
